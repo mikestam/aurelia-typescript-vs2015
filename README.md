@@ -109,6 +109,6 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
     
   All Type Definition files (*.d.ts) within the web site folder (including the ones under jspm_packages) are recognize by Visual Studio and added to IntelliSense. When you right click an imported module, and select "Go To Definiton", you will be taken to the *.d.ts file where that module is defined. You will notice that the file opens from a "TypeScript Virtual Project", which loads all the type information from your real project into memory.
   
-  Aurelia JSPM packages come with type definition files, but if you use a library that does not, look for them at [DefinitelyTypes](https://github.com/borisyankov/DefinitelyTyped). To use a type definition file that you downloaded, simply copy it anywhere into your web site folder - typically a folder name "types" or something similar.
+  Aurelia JSPM packages come with type definition files, but if you use a library that does not, look for them at [DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped). To use a type definition file that you downloaded, simply copy it anywhere into your web site folder - typically a folder name "types" or something similar.
 
   
