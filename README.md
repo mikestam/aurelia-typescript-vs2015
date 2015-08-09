@@ -1,11 +1,11 @@
 ﻿# Credits
 
 This project is just a slightly different configuration of the following GitHub projects. Without them, I would still be lost.
-* [cmichaelgraham/aurelia-typescript!](https://github.com/cmichaelgraham/aurelia-typescript)
-* [Zoltu/Templates-Aurelia-TypeScript!](https://github.com/Zoltu/Templates-Aurelia-TypeScript)
+* [cmichaelgraham/aurelia-typescript](https://github.com/cmichaelgraham/aurelia-typescript)
+* [Zoltu/Templates-Aurelia-TypeScript](https://github.com/Zoltu/Templates-Aurelia-TypeScript)
 
 This screencast is an excellent starting point for anyone new to Aurelia. It demonstrates how easy it is to get started by focusing on the minimum requirements.
-* [Creating an Aurelia App from Scratch Screencast - by gregoryagu!](http://www.screencast.com/t/DWue3DgK)
+* [Creating an Aurelia App from Scratch Screencast - by gregoryagu](http://www.screencast.com/t/DWue3DgK)
 
 # Getting Dependencies
 
@@ -44,9 +44,9 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
 
 * Install VS 2015 Community Edition (or higher) with C++ and Node. (If you select Git during installation, you will still need to install Git for Windows separately.)
 
-* Install [Git for Windows!](https://git-scm.com/download/win) (needed to compile node-gyp - the compiler for node)
+* Install [Git for Windows](https://git-scm.com/download/win) (needed to compile node-gyp - the compiler for node)
 
-* Install [Python 2.7.3!](https://www.python.org/download/releases/2.7.3/)
+* Install [Python 2.7.3](https://www.python.org/download/releases/2.7.3/)
 
 * Add a new system environment variable named **PYTHON** and set it to the full path of python.exe. For example: C:\Python27\python.exe
 
@@ -109,6 +109,6 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
     
   All Type Definition files (*.d.ts) within the web site folder (including the ones under jspm_packages) are recognize by Visual Studio and added to IntelliSense. When you right click an imported module, and select "Go To Definiton", you will be taken to the *.d.ts file where that module is defined. You will notice that the file opens from a "TypeScript Virtual Project", which loads all the type information from your real project into memory.
   
-  Aurelia JSPM packages come with type definition files, but if you use a library that does not, look for them at [DefinitelyTypes!](https://github.com/borisyankov/DefinitelyTyped). To use a type definition file that you downloaded, simply copy it anywhere into your web site folder - typically a folder name "types" or something similar.
+  Aurelia JSPM packages come with type definition files, but if you use a library that does not, look for them at [DefinitelyTypes](https://github.com/borisyankov/DefinitelyTyped). To use a type definition file that you downloaded, simply copy it anywhere into your web site folder - typically a folder name "types" or something similar.
 
   
