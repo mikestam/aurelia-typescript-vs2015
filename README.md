@@ -89,7 +89,7 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
 
 ### Visual Studio 2015
 
-  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this template, files with the .ts extension have a build action of TypeScript which does the transpiling to ECMAScript 5 when you build the project. Also, with this template you will see a TypeScript section in your project properties where you can select specific compiler options for the TypeScript compiler (tsc). Unfortunately, these options are a small subset of all possible compiler options that you can be specified in the tsconfig.json file, which is not recognized by this project type. One of the missing options is "experimentalDecorators" which is used extensively by Aurelia.
+  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this template, files with the .ts extension have a build action of TypeScript which does the transpiling to ECMAScript 5 when you build the project. Also, with this template you will see a TypeScript section in your project properties where you can select specific compiler options for the TypeScript compiler (tsc). Unfortunately, these options are a small subset of all possible compiler options that can be specified in the tsconfig.json file, which is not recognized by this project type. One of the missing options is "experimentalDecorators" which is used extensively by Aurelia.
 
   To save yourself much frustration, I highly recommend using a Visual Studio Web Site with a tsconfig.json file. The instructions above are written for that scenario.
 
@@ -97,15 +97,15 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
 
 ### TypeScript
 
-  If you are new to TypeScript (like I am), you may think that every argument and variable needs to have a type. Fortunately, this is not the case. If no type is specified, it 
-  a variable will implicitly be an 'any' type. So, any ECMAScript 6 file should transpile as long as it does not use ES6 features that are not yet supported by the TypeScript transpiler.
+  If you are new to TypeScript (like I am), you may think that every argument and variable needs to have a type. Fortunately, this is not the case. If no type is specified, a variable will implicitly be of type 'any'. So, any ECMAScript 6 file should transpile as long as it does not use ES6 features that are not yet supported by the TypeScript transpiler.
 
-  All Type Definition files (*.d.ts) within the web site folder (includes the ones under jspm_packages) are recognize by Visual Studio and used by IntelliSense. When you right click an imported module, and select "Go To Definiton", your will be taken to the *.d.ts file where that module is defined. You will notice that the file opens from a "TypeScript Virtual Project" which loads all the type information from your real project into memory. You are able to browse through all the type definitons,
-  which is very useful for learning the Aurelia framework.
-  
-  To see these virtual projects, change your Visual Studio 2015 settings as follows:
-
+  Visual Studio 2015 has feature called "TypeScript Virtual Projects". These are very helpful for navigation type definitions, but to see them you will need to make the following change to your Visual Studio settings.
   * Tools > Options > Text Editor > TypeScript > Project
     * Check "Display Virtual Projects when no Solution is loaded"
     * Check "Display Virtual Projects when a Solution is loaded"
+    
+  All Type Definition files (*.d.ts) within the web site folder (including the ones under jspm_packages) are recognize by Visual Studio and added to IntelliSense. When you right click an imported module, and select "Go To Definiton", you will be taken to the *.d.ts file where that module is defined. You will notice that the file opens from a "TypeScript Virtual Project", which loads all the type information from your real project into memory.
+  
+  Aurelia JSPM packages come with type definition files, but if you use a library that does not, look for them at [DefinitelyTypes!](https://github.com/borisyankov/DefinitelyTyped). To use a type definition file that you downloaded, simply copy it anywhere into your web site folder - typically a folder name "types" or something similar.
 
+  
