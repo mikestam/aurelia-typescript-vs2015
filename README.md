@@ -6,6 +6,7 @@ This project is just a slightly different configuration of the following GitHub 
 
 This screencast is an excellent starting point for anyone new to Aurelia. It demonstrates how easy it is to get started by focusing on the minimum requirements.
 * [Creating an Aurelia App from Scratch Screencast - by gregoryagu!](http://www.screencast.com/t/DWue3DgK)
+
 # Getting Dependencies
 
 If you are running Windows 7 or higher, make sure it is setup properly before continuing. See the **"How to Setup a New Windows Machine"** section below this section.
