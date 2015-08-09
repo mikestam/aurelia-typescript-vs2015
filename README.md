@@ -2,17 +2,20 @@
 
 This project is just a slightly different configuration of the following GitHub projects. Without them, I would still be lost.
 * [cmichaelgraham/aurelia-typescript!](https://github.com/cmichaelgraham/aurelia-typescript)
-* [https://github.com/Zoltu/Templates-Aurelia-TypeScript!](https://github.com/Zoltu/Templates-Aurelia-TypeScript)
+* [Zoltu/Templates-Aurelia-TypeScript!](https://github.com/Zoltu/Templates-Aurelia-TypeScript)
 
 # Getting Dependencies
 
-If you are running Windows 7 or higher, make sure it is setup properly before continuing. See the **"How to setup a new Windows machine"** section below this section.
+If you are running Windows 7 or higher, make sure it is setup properly before continuing. See the **"How to Setup a New Windows Machine"** section below this section.
 
 * Delete the following folder and files if they exist:
   * /jspm_packages
   * /config.js.
   * /package.json
 
+* Ensure that you have the latest version of JSPM installed
+  * npm install -g jspm@beta
+  
 * Open the node command line prompt at the root folder of the web site and enter:
   * jspm init (Press enter at each question to keep the default value, except type "TypeScript" for transpiler)
   * jspm install aurelia-framework
@@ -32,7 +35,7 @@ If you are running Windows 7 or higher, make sure it is setup properly before co
     * An icon for the new IIS Express instance should appear in your systray
 	  and the website should open in your web browser.
 
-# How to setup a new Windows machine
+# How to Setup a New Windows Machine
 
 This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the steps here for anyone who may benefit, but cannot verify that this is the only way, or the best way to configure a windows machine. Contributions to improve these steps would be greatly appreciated!
 
@@ -57,74 +60,47 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
   * npm install -g TypeScript
 
 * Install jspm globally
-  * npm install -g jspm
+  * npm install -g jspm@beta
 
 * Configure jspm with your GitHub credentials (otherwise you may hit a web request limit)
   * jspm registry config github
 
 # Additional Notes
 
-## Source Control
+### Source Control
 
-  If you are using source control, you may choose to not include the jspm_packages folder
-  when checking-in changes. If so, you can check-in the package.json and config.js files,
-  then when getting a fresh copy of the project from source control, just enter this
-  at the command line from the root directory.
+  If you are using source control, you may choose to not include the jspm_packages folder when checking-in changes. If so, you can check-in the package.json and config.js files, then when getting a fresh copy of the project from source control, just enter this at the command line from the root directory.
 
   * jspm install -y
 
-  If you are using Team Foundation Server as source control (includes the online version),
-  you can create a ".tfignore" file at the root of your source control folder and add the 
-  following path to it (without quotes). That is all you need in the file for this purpose.
+  If you are using Team Foundation Server as source control (includes the online version), you can create a ".tfignore" file at the root of your source control folder and add the following path to it (without quotes). That is all that you will need in the file.
 
   * "\*\jspm_packages"
 
-## Windows File Path Length Limit (Still an issue in Windows 10)
+### Windows File Path Length Limit (Still an issue in Windows 10)
 
-  As your project grows, you may install npm modules directly which will create a
-  node_modules folder. Because of the way node handles nested dependencies, you
-  will end up with many levels of nested node_modules folders. This often exceeds
-  the file path length limit for Windows. Windows will allow the folders/files to be
-  created, but you will not be able to copy or delete them.
-  I don't have a solution for copying the folders/files, but they can be deleted
-  with rimraf. At the node command line prompt, enter:
+  As your project grows, you may install npm modules directly which will create a node_modules folder. Because of the way node handles nested dependencies, you will end up with many levels of nested node_modules folders. This often exceeds the file path length limit for Windows. Windows will allow the folders/files to be created, but you will not be able to copy or delete them. I don't have a solution for copying the folders/files, but they can be deleted with rimraf. At the node command line prompt, enter:
 
   * npm install -g rimraf
 
-  To delete the node_modules folder and all child folders/files, enter the following
-  at the root directory of your web site
+  To delete the node_modules folder and all child folders/files, enter the following at the root directory of your web site
 
   * rimraf node_modules
 
-## Visual Studio 2015
+### Visual Studio 2015
 
-  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this
-  template, files with the .ts extension have a build action of TypeScript which does
-  the transpiling to ECMAScript 5 when you build the project. Also, with this template
-  you will see a TypeScript section in your project properties where you can select
-  specific compiler options for the TypeScript compiler (tsc). Unfortunately, these
-  options are a small subset of all possible compiler options that you can be specified
-  in the tsconfig.json file, which is not recognized by this project type. One of the
-  missing options is "experimentalDecorators" which is used extensively by Aurelia.
+  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this template, files with the .ts extension have a build action of TypeScript which does the transpiling to ECMAScript 5 when you build the project. Also, with this template you will see a TypeScript section in your project properties where you can select specific compiler options for the TypeScript compiler (tsc). Unfortunately, these options are a small subset of all possible compiler options that you can be specified in the tsconfig.json file, which is not recognized by this project type. One of the missing options is "experimentalDecorators" which is used extensively by Aurelia.
 
-  To save yourself much frustration, I highly recommend using a Visual Studio Web Site
-  with a tsconfig.json file. The instructions above are written for that scenario.
+  To save yourself much frustration, I highly recommend using a Visual Studio Web Site with a tsconfig.json file. The instructions above are written for that scenario.
 
-  With a Visual Studio Web Site, transpiling TypeScript is easy. Just save your .ts file
-  and by default, it will be transpiled to a .js file with the same name, in the same folder.
+  With a Visual Studio Web Site, transpiling TypeScript is easy. Just save your .ts file and by default, it will be transpiled to a .js file with the same name, in the same folder.
 
-## TypeScript
+### TypeScript
 
-  If you are new to TypeScript (like I am), you may think that every argument and variable
-  needs to have a type. Fortunately, this is not the case. If no type is specified, it 
-  a variable will implicitly be an 'any' type. So, any ECMAScript 6 file should transpile
-  as long as it does not use ES6 features that are not yet supported by the TypeScript transpiler.
+  If you are new to TypeScript (like I am), you may think that every argument and variable needs to have a type. Fortunately, this is not the case. If no type is specified, it 
+  a variable will implicitly be an 'any' type. So, any ECMAScript 6 file should transpile as long as it does not use ES6 features that are not yet supported by the TypeScript transpiler.
 
-  All Type Definition files (*.d.ts) within the web site folder (includes the ones under jspm_packages)
-  are recognize by Visual Studio and used by IntelliSense. When you right click an imported module,
-  and select "Go To Definiton", your will be taken to the *.d.ts file where that module is defined.
-  You will notice that the file opens from a "TypeScript Virtual Project" which loads all the type
-  information from your real project into memory. You are able to browse through all the type definitons,
+  All Type Definition files (*.d.ts) within the web site folder (includes the ones under jspm_packages) are recognize by Visual Studio and used by IntelliSense. When you right click an imported module, and select "Go To Definiton", your will be taken to the *.d.ts file where that module is defined. You will notice that the file opens from a "TypeScript Virtual Project" which loads all the type information from your real project into memory. You are able to browse through all the type definitons,
   which is very useful for learning the Aurelia framework.
   
   To see these virtual projects, change your Visual Studio 2015 settings as follows:
