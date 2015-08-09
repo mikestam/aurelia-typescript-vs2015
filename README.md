@@ -92,7 +92,7 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
 
 ### Visual Studio 2015
 
-  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this template, files with the .ts extension have a build action of TypeScript which does the transpiling to ECMAScript 5 when you build the project. Also, with this template you will see a TypeScript section in your project properties where you can select specific compiler options for the TypeScript compiler (tsc). Unfortunately, these options are a small subset of all possible compiler options that can be specified in the tsconfig.json file, which is not recognized by this project type. One of the missing options is "experimentalDecorators" which is used extensively by Aurelia.
+  You may notice that Visual Studio 2015 has a "TypeScript" project template. With this template, files with the .ts extension have a build action of TypeScript which does the transpiling to ECMAScript 5 when you build the project. Also, with this template you will see a TypeScript section in your project properties where you can select specific [compiler options](https://github.com/Microsoft/TypeScript/wiki/Compiler-Options) for the TypeScript compiler (tsc). Unfortunately, these options are a small subset of all possible compiler options that can be specified in the [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) file, which is not recognized by this project type. One of the missing options is "experimentalDecorators" which is used extensively by Aurelia.
 
   To save yourself much frustration, I highly recommend using a Visual Studio Web Site with a tsconfig.json file. The instructions above are written for that scenario.
 
@@ -100,9 +100,9 @@ This is how I setup my Windows 8.1 and Windows 10 machines. I have listed the st
 
 ### TypeScript
 
-  If you are new to TypeScript (like I am), you may think that every argument and variable needs to have a type. Fortunately, this is not the case. If no type is specified, a variable will implicitly be of type 'any'. So, any ECMAScript 6 file should transpile as long as it does not use ES6 features that are not yet supported by the TypeScript transpiler.
+  If you are new to TypeScript (like I am), you may think that every argument and variable needs to have a type. Fortunately, this is not the case. If no type is specified, a variable will implicitly be of type 'any'. So, any ECMAScript 6 file should transpile as long as it does not use ES6 [features that are not yet supported by the TypeScript transpiler](http://blogs.msdn.com/b/typescript/archive/2015/07/20/announcing-typescript-1-5.aspx).
 
-  Visual Studio 2015 has feature called "TypeScript Virtual Projects". These are very helpful for navigation type definitions, but to see them you will need to make the following change to your Visual Studio settings.
+  Visual Studio 2015 has a feature called "TypeScript Virtual Projects". These are very helpful for navigating type definitions, but to see them, you will need to make the following change to your Visual Studio settings.
   * Tools > Options > Text Editor > TypeScript > Project
     * Check "Display Virtual Projects when no Solution is loaded"
     * Check "Display Virtual Projects when a Solution is loaded"
