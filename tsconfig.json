@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "declaration": false,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "inlineSourceMap": true,
+        "noImplicitAny": true,
+        "noEmit": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true
+    }
+}
